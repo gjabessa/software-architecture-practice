@@ -20,12 +20,12 @@ public class CustomerService {
     }
 
 
-    public void update(String phone){
-
+    public void update(Customer customer){
+        customerRepostiory.save(customer);
     }
 
     public void remove(String phone){
-
+        customerRepostiory.deleteById(phone);
     }
 
 }
