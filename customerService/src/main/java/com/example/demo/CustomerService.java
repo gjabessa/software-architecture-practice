@@ -1,2 +1,31 @@
-package com.example.demo;public class CustomerServiceTest {
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class CustomerService {
+
+    @Autowired
+    CustomerRepostiory customerRepostiory;
+
+    public void add(Customer customer){
+        customerRepostiory.insert(customer);
+    }
+
+    public List<Customer> view(){
+        return customerRepostiory.findAll();
+    }
+
+
+    public void update(String phone){
+
+    }
+
+    public void remove(String phone){
+
+    }
+
 }
